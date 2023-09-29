@@ -1,14 +1,15 @@
 from flask import Flask, redirect, jsonify, render_template, request
 from config.db import app
 
-from api.Clientes import ruta_cliente
+from api.usuario import ruta_usuario
 from api.Ruta import  ruta_ruta
-from api.Puntos_estrategicos import  ruta_Puntos_estrategicos
+from api.comunidad import  ruta_comunidad
+from api.alerta import  ruta_alerta
 
-
-app.register_blueprint(ruta_cliente, url_prefix="/api")
+app.register_blueprint(ruta_usuario, url_prefix="/api")
 app.register_blueprint(ruta_ruta, url_prefix="/api")
-app.register_blueprint(ruta_Puntos_estrategicos, url_prefix="/api")
+app.register_blueprint(ruta_comunidad, url_prefix="/api")
+app.register_blueprint(ruta_alerta, url_prefix="/api")
 
 @app.route("/")
 def index():

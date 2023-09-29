@@ -24,7 +24,7 @@ def saveruta():
     return ruta_schema.jsonify(Ruta(**data))
 #Hector actualizar Ruta
 @ruta_ruta.route("/updateruta", methods=["PUT"])
-def updatecliente():
+def updateruta():
     id = request.json['id']
     latitud = latitud.json['latitud']
     longitud = longitud.json['latitud']
