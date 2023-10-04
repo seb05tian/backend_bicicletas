@@ -7,8 +7,8 @@ class alerta(db.Model):
     id_ruta = db.Column(db.Integer, db.ForeignKey('tblrutas'))
     tipo_alerta= db.Column(db.String(250))
     descripcion= db.Column(db.String(250))
-    fecha = db.Column(db.DateTime)
-    hora= db.Column(db.DateTime)
+    fecha = db.Column(db.Date)
+    hora= db.Column(db.Time)
 
     def __init__(self, id_alerta, id_ruta, tipo_alerta, descripcion, fecha, hora):
         self.id_alerta=id_alerta

@@ -7,7 +7,7 @@ class comunidad(db.Model):
     id_usuario = db.Column(db.Integer, db.ForeignKey('tblusuario.id_usuario'))
     Nombre_comunidad = db.Column(db.String(100))
     comentario = db.Column(db.String(100))
-    fecha = db.Column(db.DateTime)
+    fecha = db.Column(db.Date)
 
 
 
