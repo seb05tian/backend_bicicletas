@@ -3,15 +3,15 @@ from config.db import app, db, ma
 class usuario(db.Model):
     __tablename__ = "tblusuario"
 
-    id_usuario = db.Column(db.Integer, primary_key = True)
+    id_usuario = db.Column(db.Integer, primary_key = True, autoincrement=True)
     nombre_usuario = db.Column(db.String(50))
     contraseña = db.Column(db.String(50))
     correo_electronico = db.Column(db.String(100))
    
 
 
-    def __init__(self, id_usuario , nombre_usuario , contraseña , correo_electronico ):
-        self.id_usuario=id_usuario
+    def __init__(self, nombre_usuario , contraseña , correo_electronico ):
+        
         self.nombre_usuario = nombre_usuario
         self.contraseña=contraseña
         self.correo_electronico=correo_electronico

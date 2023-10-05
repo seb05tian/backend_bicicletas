@@ -3,7 +3,7 @@ from config.db import app, db, ma
 class Ruta(db.Model):
     __tablename__ = "tblrutas"
 
-    id_ruta = db.Column(db.Integer, primary_key = True)
+    id_ruta = db.Column(db.Integer, primary_key = True, autoincrement=True)
     id_usuario = db.Column(db.Integer, db.ForeignKey('tblusuario.id_usuario'))
     latitud = db.Column(db.String(250))
     longitud = db.Column(db.String(250))
@@ -12,8 +12,7 @@ class Ruta(db.Model):
 
     
 
-    def __init__(self, id_ruta, id_usuario, latitud, longitud,ruta_propuesta, fecha):
-        self.id_ruta=id_ruta
+    def __init__(self, id_usuario, latitud, longitud,ruta_propuesta, fecha):
         self.id_usuario = id_usuario 
         self.longitud=longitud
         self.latitud=latitud
