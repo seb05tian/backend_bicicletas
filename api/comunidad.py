@@ -29,7 +29,7 @@ def savecomunidad():
 def updatecomunidad():
     id_comunidad = request.json['id_comunidad']
     id_usuario=request.json['id_usuario']
-    nombre_comunidad=request.json['nombre_comunidad']
+    nombre_comunidad=request.json['Nombre_comunidad']
     comentario=request.json['comentario']
     fecha=request.json['fecha']
     ncomunidad = comunidad.query.get(id_comunidad) #Select * from Cliente where id = id

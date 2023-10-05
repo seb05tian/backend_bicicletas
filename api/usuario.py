@@ -27,18 +27,30 @@ def updateusuario():
     nombre = request.json['nombre_usuario']
     contraseña=request.json['contraseña']
     correo_electronico=request.json['correo_electronico']
+<<<<<<< HEAD
+=======
+    
+>>>>>>> d9f21fb5fa3c5b4adee206ec0fff6b1f4727bb9a
     nusuario = usuario.query.get(id_usuario) #Select * from Cliente where id = id
     nusuario.nombre = nombre
     nusuario.contraseña=contraseña
     nusuario.correo_electronico=correo_electronico
+<<<<<<< HEAD
+=======
+   
+>>>>>>> d9f21fb5fa3c5b4adee206ec0fff6b1f4727bb9a
     db.session.commit()
     return "Datos Actualizado con exitos"
 
-@ruta_usuario.route("/deletecliente/<id_usuario>", methods=["GET"])
+@ruta_usuario.route("/deleteusuario/<id_usuario>", methods=["GET"])
 def deleteusuario(id_usuario):
     data = usuario.query.get(id_usuario)
     db.session.delete(data)
     db.session.commit()
+<<<<<<< HEAD
     return jsonify(usuario_schema.dump(data))
  
  
+=======
+    return jsonify(usuario_schema.dump(data))
+>>>>>>> d9f21fb5fa3c5b4adee206ec0fff6b1f4727bb9a
