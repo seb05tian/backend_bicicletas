@@ -1,5 +1,5 @@
-from flask import Flask, redirect, jsonify, render_template, request
-from config.db import app
+from flask import Flask, redirect, jsonify, render_template, request, json, session
+from config.bd import app, db
 
 from api.usuario import ruta_usuario
 from api.Ruta import  ruta_ruta
@@ -11,9 +11,12 @@ app.register_blueprint(ruta_ruta, url_prefix="/api")
 app.register_blueprint(ruta_comunidad, url_prefix="/api")
 app.register_blueprint(ruta_alerta, url_prefix="/api")
 
-@app.route("/")
+
+
+@app.route('/', methods=['GET'])
 def index():
-    return render_template('layout.html')
+    return render_template("login.html")
+    
 
 @app.route("/savegps",methods=["POST"])
 def savegps():

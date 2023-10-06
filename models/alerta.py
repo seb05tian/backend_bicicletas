@@ -1,4 +1,4 @@
-from config.db import app, db, ma
+from config.bd import app, db, ma
 
 class alerta(db.Model):
     __tablename__ = "tblalerta"

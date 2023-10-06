@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request,json
-from config.db import db, app, ma
+from config.bd import db, app, ma
 from models.comunidad import comunidad, comunidadSchema
 
 ruta_comunidad = Blueprint("ruta_comunidad",__name__)

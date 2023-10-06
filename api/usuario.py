@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request,json
-from config.db import db, app, ma
+from config.bd import db, app, ma
 from models.usuario import usuario, usuarioSchema
 
 ruta_usuario = Blueprint("ruta_usuario",__name__)

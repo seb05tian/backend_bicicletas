@@ -1,4 +1,4 @@
-from config.db import app, db, ma
+from config.bd import app, db, ma
 
 class usuario(db.Model):
     __tablename__ = "tblusuario"
