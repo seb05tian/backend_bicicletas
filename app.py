@@ -17,7 +17,9 @@ app.register_blueprint(ruta_alerta, url_prefix="/api")
 def index():
     return render_template("login.html")
 
-    
+@app.route('/Registrar', methods=['GET'])
+def registrar():
+    return render_template("register.html")
 
 @app.route("/savegps",methods=["POST"])
 def savegps():
@@ -28,10 +30,3 @@ def savegps():
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000, host='0.0.0.0')
-
-@app.route('/', methods=['GET'])
-def index():
-    return render_template("register.html")
-
-if __name__ == "__main__":
-    app.run(debug=True)
