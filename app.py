@@ -18,8 +18,23 @@ def index():
     
     return render_template("login.html")
 
+@app.route('/index', methods=['GET'])
+def inicio():
+    return render_template("index.html")
+
+@app.route('/chat', methods=['GET'])
+def chat():
+    
+    return render_template("Chat.html")
+
+@app.route('/mapa', methods=['GET'])
+def mapa():
+    
+    return render_template("Mapa.html")
+
 @app.route('/Registrar', methods=['GET'])
-def registrar():
+def register():
+    
     return render_template("register.html")
 
 @app.route("/savegps",methods=["POST"])
