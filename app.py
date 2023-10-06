@@ -15,6 +15,7 @@ app.register_blueprint(ruta_alerta, url_prefix="/api")
 
 @app.route('/', methods=['GET'])
 def index():
+    
     return render_template("login.html")
 
 @app.route('/Registrar', methods=['GET'])
