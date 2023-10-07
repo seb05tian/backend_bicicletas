@@ -17,13 +17,13 @@
         <header>
             <h1 class="site-heading text-center text-faded d-none d-lg-block">
                 <span class="site-heading-upper text-primary mb-3">UN LUGAR PARA RODAR</span>
-                <span class="site-heading-lower">CYCLE PATH FINDER</span>
+                <span class="site-heading-lower">PATH FINDER</span>
             </h1>
         </header>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
             <div class="container">
-                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">CYCLE PATH FINDER</a>
+                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">PATH FINDER</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
@@ -35,6 +35,13 @@
             </div>
         </nav>
         
+        <form action="/submit-comment" method="post">
+            <label for="comment">Escribe tu comentario:</label>
+            <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+            <br>
+            <input type="submit" value="Enviar comentario">
+          </form>
+
         <footer class="footer text-faded text-center py-5">
             <div class="container"><p class="m-0 small">Aqui se supone que va informacion de contacto y cosas así, pero aja, yo no tengo nada que colocar</p></div>
         </footer>
