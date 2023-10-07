@@ -2,38 +2,43 @@
 
 {% block content %}
 
-    <h1>CyclePathFinder</h1>
-    <form action="">
-        <!-- Headings for the form -->
-        <div class="headingsContainer">
-            <h3>Inicia sesión</h3>
-            <p>Inicia sesión con su usuario y contraseña</p>
-        </div>
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<h1>Hello World.</h1>
 
-        <!-- Main container for all inputs -->
-        <div class="mainContainer">
-            <!-- Username -->
-            <label for="username">Su usuario</label>
-            <input type="text" placeholder="usuario" name="username" required>
-
-            <br><br>
-
-            <!-- Password -->
-            <label for="pswrd">Su contraseña</label>
-            <input type="password" placeholder="Contraseña" name="pswrd" required>
-
-
-            <!-- Submit button -->
-            <button type="submit">Iniciar sesión</button>
-
-            <!-- Sign up link -->
-            <p class="register">¿Aún no es un miembro?  <a href="/Registrar">¡Registrese aquí!</a></p>
-
-        </div>
-
-    </form>
-
-
-
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		Curabitur et est sed felis aliquet sollicitudin</p>
+		<span>
+			<p>lsocial media</p>
+			<a href="#"><i class="fa fa-facebook" aria-hidden="true" style="font-size: 20px;"></i></a>
+			<a href="#"><i class="fa fa-instagram" aria-hidden="true" style="font-size: 20px;"></i></a>
+		</span>
+		</div>
+	</div>
+	
+	
+		<div class="right">
+		<h5>Login</h5>
+		<br><br>
+		
+			
+		<br>
+		<p>Don't have an account? <a href="#">Creat Your Account</a> it takes less than a minute</p>
+		<div class="inputs">
+			<input type="text" placeholder="user name">
+			<br>
+			<input type="password" placeholder="password">
+		</div>
+			
+			<br><br>
+		
+			
+			<br>
+			<button>Login</button>
+	</div>
+	
+</div>
+<!-- partial -->
 
 {% endblock %}
