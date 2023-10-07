@@ -11,7 +11,7 @@ app.register_blueprint(ruta_ruta, url_prefix="/api")
 app.register_blueprint(ruta_comunidad, url_prefix="/api")
 app.register_blueprint(ruta_alerta, url_prefix="/api")
 
-#Tamplates
+#Templates Front
 
 @app.route('/', methods=['GET'])
 def index():
