@@ -6,7 +6,7 @@ class usuario(db.Model):
     id_usuario = db.Column(db.Integer, primary_key = True, autoincrement=True)
     nombre_usuario = db.Column(db.String(50))
     contraseña = db.Column(db.String(50))
-    correo_electronico = db.Column(db.String(100))
+    
    
 
 
@@ -14,7 +14,7 @@ class usuario(db.Model):
         
         self.nombre_usuario = nombre_usuario
         self.contraseña=contraseña
-        self.correo_electronico=correo_electronico
+        
         
 
 with app.app_context():
@@ -22,4 +22,4 @@ with app.app_context():
 
 class usuarioSchema(ma.Schema):
     class Meta:
-        fields = ('id_usuario' , 'nombre_usuario' , 'contraseña' , 'correo_electronico')
+        fields = ('id_usuario' , 'nombre_usuario' , 'contraseña')

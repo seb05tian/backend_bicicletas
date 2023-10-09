@@ -26,11 +26,9 @@ def updateusuario():
     id_usuario = request.json['id_usuario']
     nombre = request.json['nombre_usuario']
     contraseña=request.json['contraseña']
-    correo_electronico=request.json['correo_electronico']
     nusuario = usuario.query.get(id_usuario) #Select * from Cliente where id = id
     nusuario.nombre = nombre
     nusuario.contraseña=contraseña
-    nusuario.correo_electronico=correo_electronico
     db.session.commit()
     return "Datos Actualizado con exitos"
 
