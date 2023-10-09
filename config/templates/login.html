@@ -3,47 +3,39 @@
 {% block content %}
 
 <div class="box-form">
-	<div class="left">
-		<div class="overlay">
-		<h1>Route Finder</h1>
-
-		<p>Te ayudaremos a encontrar tu lugar para rodar</p>
-		<span>
-			<p>Nuestras redes</p>
-			<a href="#"><i class="fa fa-facebook" aria-hidden="true" style="font-size: 20px;"></i></a>
-			<a href="#"><i class="fa fa-instagram" aria-hidden="true" style="font-size: 20px;"></i></a>
-		</span>
+	<form method="POST" action="/"> <!-- Agregamos el método POST y la acción para enviar el formulario a la ruta '/' -->
+		<div class="left">
+			<div class="overlay">
+				<h1>Route Finder</h1>
+				<p>Te ayudaremos a encontrar tu lugar para rodar</p>
+				<span>
+					<p>Nuestras redes</p>
+					<a href="#"><i class="fa fa-facebook" aria-hidden="true" style="font-size: 20px;"></i></a>
+					<a href="#"><i class="fa fa-instagram" aria-hidden="true" style="font-size: 20px;"></i></a>
+				</span>
+			</div>
 		</div>
-	</div>
-	
-	
+
 		<div class="right">
 			<br><br>
-		
-			
 			<br>
-		<h5>Ingresar</h5>
-		<br><br>
-
-		<br>
-		<br><br>
-
-		<br>
-		<p>¿No tienes cuenta? <a href="/Registrar">¡Registrate</a> <br> No te tomara ni un minuto!</p>
-		<div class="inputs">
-			<input type="text" placeholder="Usuario">
-			<br>
-			<input type="password" placeholder="Contraseña">
-		</div>
-			
+			<h5>Ingresar</h5>
 			<br><br>
-		
-			
 			<br>
-			<button>Iniciar sesión</button>
-	</div>
-	
+			<br><br>
+			<br>
+			<p>¿No tienes cuenta? <a href="/Registrar">¡Regístrate</a> <br> No te tomará ni un minuto!</p>
+			<div class="inputs">
+				<input type="text" placeholder="Usuario" name="usuario"> <!-- Agregamos el atributo name para identificar el campo de usuario -->
+				<br>
+				<input type="password" placeholder="Contraseña" name="password"> <!-- Agregamos el atributo name para identificar el campo de contraseña -->
+			</div>
+			<br><br>
+			<br>
+			<button type="submit">Iniciar sesión</button> <!-- Agregamos type="submit" para que el botón envíe el formulario -->
+		</div>
+	</form>
 </div>
-<!-- partial -->
+
 
 {% endblock %}
