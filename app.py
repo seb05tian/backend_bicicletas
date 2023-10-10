@@ -1,7 +1,7 @@
 from flask import Flask, redirect, jsonify, render_template, request, session
 from config.bd import app, db
 from sqlalchemy import text
-
+from models.usuario import usuario
 
 from api.usuario import ruta_usuario
 from api.Ruta import ruta_ruta
@@ -54,10 +54,24 @@ def mapa():
     
     return render_template("Mapa.html")
 
-@app.route('/Registrar', methods=['GET'])
+@app.route('/Registrar', methods=['GET', 'POST'])
 def register():
+    if request.method == 'POST':
+        
+        usuario_registrar = request.form['usuario_registrar']
+        password_registrar = request.form['password_registrar']
+
+       
+        
+        user = usuario(nombre_usuario=usuario_registrar, contraseña=password_registrar)
+        db.session.add(user)
+        db.session.commit()
+
+       
+        return redirect('/')
     
     return render_template("register.html")
+
 
 @app.route("/savegps",methods=["POST"])
 def savegps():

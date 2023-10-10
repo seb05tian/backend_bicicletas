@@ -1,4 +1,7 @@
 from config.bd import app, db, ma
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
 
 class usuario(db.Model):
     __tablename__ = "tblusuario"
@@ -10,7 +13,7 @@ class usuario(db.Model):
    
 
 
-    def __init__(self, nombre_usuario , contraseña , correo_electronico ):
+    def __init__(self, nombre_usuario , contraseña ):
         
         self.nombre_usuario = nombre_usuario
         self.contraseña=contraseña
