@@ -17,23 +17,7 @@ app.register_blueprint(ruta_alerta, url_prefix="/api")
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
-    if request.method == 'POST' and 'usuario' in request.form and 'password' in request.form:
-        _user = request.form['usuario']
-        _pass = request.form['password']
-
-        sql_query = text('SELECT * FROM tblusuario WHERE nombre_usuario = :user AND contraseña = :pass')
-        result = db.session.execute(sql_query, {'user': _user, 'pass': _pass})
-        account = result.fetchone()
-
-        if account:
-            # Accede a los elementos de la tupla por posición numérica
-            id_usuario = account[0]
-            nombre_usuario = account[1]
-            contraseña = account[2]
-
-            session['logueado'] = True
-            session['id_usuario'] = id_usuario
-            return render_template("index.html")
+    
 
     return render_template("login.html")
 
@@ -56,19 +40,7 @@ def mapa():
 
 @app.route('/Registrar', methods=['GET', 'POST'])
 def register():
-    if request.method == 'POST':
-        
-        usuario_registrar = request.form['usuario_registrar']
-        password_registrar = request.form['password_registrar']
-
-       
-        
-        user = usuario(nombre_usuario=usuario_registrar, contraseña=password_registrar)
-        db.session.add(user)
-        db.session.commit()
-
-       
-        return redirect('/')
+   
     
     return render_template("register.html")
 

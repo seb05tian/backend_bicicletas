@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="box-form">
-	<form method="POST" action="/"> <!-- Agregamos el método POST y la acción para enviar el formulario a la ruta '/' -->
+	<form method="POST"  >
 		<div class="left">
 			<div class="overlay">
 				<h1>Route Finder</h1>
@@ -26,13 +26,13 @@
 			<br>
 			<p>¿No tienes cuenta? <a href="/Registrar">¡Regístrate</a> <br> No te tomará ni un minuto!</p>
 			<div class="inputs">
-				<input type="text" placeholder="Usuario" name="usuario"> <!-- Agregamos el atributo name para identificar el campo de usuario -->
+				<input type="text" placeholder="Usuario" id="usuario"> <!-- Agregamos el atributo name para identificar el campo de usuario -->
 				<br>
-				<input type="password" placeholder="Contraseña" name="password"> <!-- Agregamos el atributo name para identificar el campo de contraseña -->
+				<input type="password" placeholder="Contraseña" id="password"> <!-- Agregamos el atributo name para identificar el campo de contraseña -->
 			</div>
 			<br><br>
 			<br>
-			<button type="submit">Iniciar sesión</button> <!-- Agregamos type="submit" para que el botón envíe el formulario -->
+			<a class="btn btn-primary" onclick="get_usuario()"> iniciar sesion</a> <!-- Agregamos type="submit" para que el botón envíe el formulario -->
 		</div>
 	</form>
 </div>

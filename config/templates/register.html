@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="box-form">
-	<form method="POST" action="/Registrar">
+	<form method="POST" >
 		<div class="left">
 			<div class="overlay">
 			<h1>Route Finder</h1>
@@ -34,16 +34,16 @@
 			<br>
 			<p>¿Ya tienes cuenta? <a href="/">¡Inicia sesión</a> <br> te esperabamos!</p>
 			<div class="inputs">
-				<input type="text" placeholder="Usuario" name="usuario_registrar">
+				<input type="text" placeholder="Usuario" id="usuario_registrar">
 				<br>
-				<input type="password" placeholder="Contraseña" name="password_registrar">
+				<input type="password" placeholder="Contraseña" id="password_registrar">
 			</div>
 				
 				<br><br>
 			
 				
 				<br>
-				<button type="submit">Registrarse</button>
+				<a class="btn btn-primary" onclick="saveusuario()"> Save</a>
 		</div>
 	</form>
 	
