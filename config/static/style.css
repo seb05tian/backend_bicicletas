@@ -17,79 +17,32 @@ body {
   flex: 1 1 100%;
   align-items: stretch;
   justify-content: space-between;
-  box-shadow: 0 0 20px 6px #361F18;
+  box-shadow: 0 0 20px 6px #090b6f85;
 }
-@media (max-width: 980px) {
-  .box-form {
-    flex-flow: wrap;
-    text-align: center;
-    align-content: center;
-    align-items: center;
-  }
-}
-.box-form div {
-  height: auto;
-}
-.box-form .left {
-  color: #FFFFFF;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url("https://i.pinimg.com/564x/ab/72/38/ab723850fbb6888f3c03518da9e67433.jpg");
-  overflow: hidden;
-}
-.box-form .left .overlay {
-  padding: 30px;
-  width: 100%;
-  height: 100%;
-  background: #361f18d2;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-.box-form .left .overlay h1 {
-  font-size: 10vmax;
-  line-height: 1;
-  font-weight: 900;
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-.box-form .left .overlay span p {
-  margin-top: 30px;
-  font-weight: 900;
-}
-.box-form .left .overlay span a {
-  background: #3b5998;
-  color: #FFFFFF;
-  margin-top: 10px;
-  padding: 14px 50px;
-  border-radius: 100px;
-  display: inline-block;
-  box-shadow: 0 3px 6px 1px #042d4657;
-}
-.box-form .left .overlay span a:last-child {
-  background: #1dcaff;
-  margin-left: 30px;
-}
-.box-form .right {
+
+
+.login-form {
+  width: auto;
   padding: 40px;
   overflow: hidden;
+
 }
-@media (max-width: 980px) {
-  .box-form .right {
-    width: 100%;
-  }
-}
-.box-form .right h5 {
+
+.login-form h5 {
   font-size: 4vmax;
   line-height: 0;
 }
-.box-form .right p {
+
+.login-form p {
   font-size: 14px;
   color: #b1b9b0;
 }
-.box-form .right .inputs {
+
+.login-form .inputs {
   overflow: hidden;
 }
-.box-form .right input {
+
+.login-form input {
   width: 100%;
   padding: 10px;
   margin-top: 25px;
@@ -98,17 +51,20 @@ body {
   outline: none;
   border-bottom: 2px solid #B0B3B9;
 }
-.box-form .right .remember-me--forget-password {
+
+.login-form .remember-me--forget-password {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.box-form .right .remember-me--forget-password input {
+
+.login-form .remember-me--forget-password input {
   margin: 0;
   margin-right: 7px;
   width: auto;
 }
-.box-form .right button {
+
+.login-form button {
   float: right;
   color: #fff;
   font-size: 16px;
@@ -119,6 +75,57 @@ body {
   outline: 0;
   box-shadow: 0px 4px 20px 0px #49c628a6;
   background-image: linear-gradient(135deg, #edaf5e 10%, #ba7c2c 100%);
+}
+
+.box-form div {
+  height: auto;
+}
+
+.box-form .left {
+  color: #FFFFFF;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://i.pinimg.com/564x/ab/72/38/ab723850fbb6888f3c03518da9e67433.jpg");
+  overflow: hidden;
+
+  
+}
+
+.box-form .left .overlay {
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+  background: #361f18d2;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.box-form .left .overlay h1 {
+  font-size: 10vmax;
+  line-height: 1;
+  font-weight: 900;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.box-form .left .overlay span p {
+  margin-top: 30px;
+  font-weight: 900;
+}
+
+.box-form .left .overlay span a {
+  background: #3b5998;
+  color: #FFFFFF;
+  margin-top: 10px;
+  padding: 14px 50px;
+  border-radius: 100px;
+  display: inline-block;
+  box-shadow: 0 3px 6px 1px #042d4657;
+}
+
+.box-form .left .overlay span a:last-child {
+  background: #1dcaff;
+  margin-left: 20px;
 }
 
 label {

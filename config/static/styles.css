@@ -11016,7 +11016,7 @@ p {
 .address strong {
   font-size: 1.2rem;
 }
-<style>
+
   label {
     display: block;
     margin-bottom: 10px;
@@ -11045,11 +11045,3 @@ p {
   input[type=submit]:hover {
     background-color: linear-gradient(135deg, #edaf5e 10%, #ba7c2c 100%);
   }
-</style>
-
-<form action="/submit-comment" method="post">
-  <label for="comment">Escribe tu comentario:</label>
-  <textarea id="comment" name="comment"></textarea>
-  <br>
-  <input type="submit" value="Enviar comentario">
-</form>
