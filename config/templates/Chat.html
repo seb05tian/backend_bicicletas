@@ -35,12 +35,23 @@
             </div>
         </nav>
         
-        <form action="/submit-comment" method="post">
-            <label for="comment">Escribe tu comentario:</label>
-            <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
-            <br>
-            <input type="submit" value="Enviar comentario">
-          </form>
+        <section class = comentarios>
+            <h1>Contenido Principal</h1>
+            <p>Aquí está el contenido principal de tu página.</p>
+        </section>
+    
+        <section class = comentarios>
+            <h2>Deja tus comentarios</h2>
+            <form action="procesar_comentarios.php" method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br>
+    
+                <label for="comentario">Comentario:</label>
+                <textarea id="comentario" name="comentario" rows="4" cols="50" required></textarea><br>
+    
+                <input type="submit" value="Enviar Comentario">
+            </form>
+        </section>
 
         <footer class="footer text-faded text-center py-5">
             <div class="container"><p class="m-0 small">Aqui se supone que va informacion de contacto y cosas así, pero aja, yo no tengo nada que colocar</p></div>
