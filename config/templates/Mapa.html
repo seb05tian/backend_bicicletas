@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" />
+        <link href="{{ url_for('static', filename='mapa.css') }}" rel="stylesheet" />
         <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
         <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
         <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js'></script>
@@ -64,7 +65,7 @@
             </div>
         </section>
          
-        <div id='map' style='width: 900px; height: 700px; margin: 0 auto;'></div>
+        <div id='map' style='width: 1300px; height: 900px; margin: 0 auto;'></div>
         <script>
         mapboxgl.accessToken = 'pk.eyJ1Ijoic2ViYXN0aWFuc2l0b2p1anUiLCJhIjoiY2xudGJobGJjMDF4ajJrcXRobTRsNnluNCJ9.E2HeHQUaGAT_BhD0F3OuXQ';
         var map = new mapboxgl.Map({
@@ -73,7 +74,111 @@
             zoom: 14 ,
             center: [-74.787977,10.988829]
         });
+
+
         map.addControl(new MapboxDirections({accessToken: mapboxgl.accessToken}), 'top-left');
+
+
+
+        const coordenadas = [
+    [-74.80228,10.99618],
+    [-74.81018,10.99767],
+    [-74.82569,11.01659]
+  
+];
+
+
+
+coordenadas.forEach(coordenada => {
+    let element = document.createElement('div');
+    element.className = 'marker';
+    element.addEventListener('click', () =>{
+       window.alert('Cuidado ciclovia en banda con alto flujo de carros.')
+    }
+    )
+    let marker = new mapboxgl.Marker(element)
+        .setLngLat(coordenada)
+        .addTo(map);
+});
+          
+
+
+const coordenadas_2 = [
+    [-74.79102,10.97090],
+    [-74.79353,10.95916]
+  
+];
+
+
+
+coordenadas_2.forEach(coordenada => {
+    let element = document.createElement('div');
+    element.className = 'marker_cicla';
+    element.addEventListener('click', () =>{
+       window.alert('Ciclo ruta en calzada.')
+    }
+    )
+    let marker = new mapboxgl.Marker(element)
+        .setLngLat(coordenada)
+        .addTo(map);
+});
+
+
+
+const coordenadas_3 = [
+   [-74.78195,11.00936]
+  
+];
+
+
+
+coordenadas_3.forEach(coordenada => {
+    let element = document.createElement('div');
+    element.className = 'marker_malecon';
+    element.addEventListener('click', () =>{
+       window.alert('Ciclo ruta del malecon.')
+    }
+    )
+    let marker = new mapboxgl.Marker(element)
+        .setLngLat(coordenada)
+        .addTo(map);
+});
+
+const coordenadas_4 = [
+   [-74.81643,10.95233],
+   [-74.81080,10.94741],
+   [-74.81261,10.97754]
+  
+];
+
+
+
+coordenadas_4.forEach(coordenada => {
+    let element = document.createElement('div');
+    element.className = 'marker_riesgo';
+    element.addEventListener('click', () =>{
+       window.alert('peligro robo de bicicleta.')
+    }
+    )
+    let marker = new mapboxgl.Marker(element)
+        .setLngLat(coordenada)
+        .addTo(map);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </script>
 
 

@@ -1,0 +1,43 @@
+.marker{
+
+background-image: url('prevencion.png');
+background-size: cover;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+cursor: pointer;
+
+}
+
+.marker_cicla{
+    background-image: url('bicicletas_anden.png');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+
+.marker_malecon{
+
+    background-image: url('malecon.png');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+.marker_riesgo{
+
+    background-image: url('peligro.png');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}

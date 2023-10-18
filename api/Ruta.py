@@ -28,18 +28,17 @@ def saveruta():
 def updateruta():
     id_ruta = request.json['id_ruta']
     id_usuario=request.json['id_usuario']
-    latitud = latitud.json['latitud']
-    longitud = longitud.json['longitud']
+    ubicacion_partida = ubicacion_partida.json['ubicacion_partida']
+    ubicacion_destino = ubicacion_destino.json['ubicacion_destino']
     ruta_propuesta=ruta_propuesta.json['ruta_propuesta']
-    fecha=fecha.json['fecha']
+    
    
 
-    nruta = Ruta.query.get(id_ruta) #Select * from ruta where id = id
+    nruta = Ruta.query.get(id_ruta) 
     nruta.id_usuario=id_usuario
-    nruta.longitud=longitud
-    nruta.latitud=latitud
+    nruta.ubicacion_partida=ubicacion_partida
+    nruta.ubicacion_destino=ubicacion_destino
     nruta.ruta_propuesta=ruta_propuesta
-    nruta.fecha=fecha
 
     db.session.commit()
     return "Datos Actualizado con exitos."

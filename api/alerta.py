@@ -3,7 +3,7 @@ from config.bd import db, app, ma
 from models.alerta import alerta, alertaSchema
 
 ruta_alerta = Blueprint("ruta_alerta",__name__)
-#routes_cliente = Blueprint("routes_cliente", __name__)
+
 
 
 alertas_schema = alertaSchema(many=True)
@@ -11,7 +11,7 @@ alerta_schema = alertaSchema()
 
 @ruta_alerta.route("/alerta", methods=["GET"])
 def alerta():
-    resultall = alerta.query.all()# Select * from Ruta;
+    resultall = alerta.query.all()
     result = alertas_schema.dump(resultall)
     return jsonify(result)
 
@@ -32,7 +32,7 @@ def updatealerta():
     descripcion=request.json['descripcion']
     fecha=request.json['fecha']
     hora=request.json['hora']
-    nalerta = alerta.query.get(id_alerta) #Select * from Cliente where id = id
+    nalerta = alerta.query.get(id_alerta) 
     nalerta.id_ruta=id_ruta
     nalerta.tipo_alerta=tipo_alerta
     nalerta.descripcion=descripcion
