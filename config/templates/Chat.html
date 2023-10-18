@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" />
+        <link href="{{ url_for('static', filename='chat.css') }}" rel="stylesheet" />
     </head>
     <body>
         <header>
@@ -20,7 +21,7 @@
                 <span class="site-heading-lower">PATH FINDER</span>
             </h1>
         </header>
-        <!-- Navigation-->
+        
         <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
             <div class="container">
                 <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">PATH FINDER</a>
@@ -41,21 +42,75 @@
         </section>
     
         <section class = comentarios>
+            
             <h2>Deja tus comentarios</h2>
-            <form action="procesar_comentarios.php" method="post">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required><br>
-    
-                <label for="comentario">Comentario:</label>
-                <textarea id="comentario" name="comentario" rows="4" cols="50" required></textarea><br>
-    
-                <input type="submit" value="Enviar Comentario">
+            
+            <form action="/chat" method="post">
+                <label for="nombre_chat" class="input-label">Nombre:</label>
+                <input type="text" id="nombre_chat" name="nombre_usuario" class="input-field" placeholder="Tu nombre" required>
+                
+                <label for="comentario" class="input-label">Comentario:</label>
+                <input type="text" id="comentario" name="comentario" class="input-field" placeholder="Escribe tu comentario" required>
+                
+                <button type="submit" class="search-button" id="enviar-comentario">Enviar Comentario</button>
             </form>
+           
+            <div class="comentarios-container">
+                {% for comentario in comentarios %}
+                    <div class="comentario">
+                        <p class="nombre">{{ comentario.nombre_usuario }}:</p>
+                        <p class="contenido">{{ comentario.comentario }}</p>
+                    </div>
+                {% endfor %}
+            </div>
         </section>
+
+
+            <script>
+                // Esta función carga y muestra los comentarios desde la base de datos
+                function cargarComentarios() {
+                    // Realiza una solicitud a tu ruta de Flask para obtener los comentarios
+                    fetch('chat', { method: 'GET' })
+                        .then(response => response.json())
+                        .then(comentarios => {
+                            const comentariosContainer = document.querySelector('.comentarios-container');
+            
+                            comentarios.forEach(comentario => {
+                                const nuevoComentario = document.createElement('div');
+                                nuevoComentario.classList.add('comentario');
+                                nuevoComentario.innerHTML = `
+                                    <p class="nombre">${comentario.nombre_usuario}:</p>
+                                    <p class="contenido">${comentario.comentario}</p>
+                                `;
+            
+                                comentariosContainer.appendChild(nuevoComentario);
+                            });
+                        })
+                        .catch(error => console.error('Error al cargar los comentarios', error));
+                }
+            
+                
+                cargarComentarios();
+            </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <footer class="footer text-faded text-center py-5">
             <div class="container"><p class="m-0 small">Aqui se supone que va informacion de contacto y cosas así, pero aja, yo no tengo nada que colocar</p></div>
         </footer>
+        <script src="{{url_for('static', filename='app.js')}}"></script>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

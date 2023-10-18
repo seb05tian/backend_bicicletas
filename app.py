@@ -2,7 +2,7 @@ from flask import Flask, redirect, jsonify, render_template, request, session
 from config.bd import app, db
 from sqlalchemy import text
 from models.usuario import usuario
-
+from models.comunidad import comunidad, comunidadSchema
 from api.usuario import ruta_usuario
 from api.Ruta import ruta_ruta
 from api.comunidad import ruta_comunidad
@@ -28,10 +28,26 @@ def login():
 def inicio():
     return render_template("index.html")
 
-@app.route('/chat', methods=['GET'])
+@app.route('/chat', methods=['GET', 'POST'])
 def chat():
-    
-    return render_template("Chat.html")
+    if request.method == 'POST':
+        # Si la solicitud es un POST, significa que se está enviando un nuevo comentario
+        nombre_usuario = request.form.get("nombre_usuario")
+        comentario = request.form.get("comentario")
+
+        usuario_existente = usuario.query.filter_by(nombre_usuario=nombre_usuario).first()
+        if not usuario_existente:
+            return render_template("Chat.html")
+
+        nuevo_comentario = comunidad(id_usuario=usuario_existente.id_usuario, nombre_usuario=nombre_usuario, comentario=comentario, )
+        db.session.add(nuevo_comentario)
+        db.session.commit()
+
+    # Obtén todos los comentarios de la base de datos
+    comentarios = comunidad.query.all()
+
+    return render_template('Chat.html', comentarios=comentarios)
+
 
 @app.route('/mapa', methods=['GET'])
 def mapa():

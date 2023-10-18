@@ -10,9 +10,12 @@ communitys_schema = comunidadSchema(many=True)
 community_schema = comunidadSchema()
 
 
+
+
+
 @ruta_comunidad.route("/comunidad", methods=["GET"])
 def communidad():
-    resultall = comunidad.query.all()# Select * from Ruta;
+    resultall = comunidad.query.all()
     result = communitys_schema.dump(resultall)
     return jsonify(result)
 
@@ -29,14 +32,15 @@ def savecomunidad():
 def updatecomunidad():
     id_comunidad = request.json['id_comunidad']
     id_usuario=request.json['id_usuario']
+    nombre=request.json['nombre']
     nombre_comunidad=request.json['Nombre_comunidad']
     comentario=request.json['comentario']
-    fecha=request.json['fecha']
-    ncomunidad = comunidad.query.get(id_comunidad) #Select * from Cliente where id = id
+   
+    ncomunidad = comunidad.query.get(id_comunidad) 
     ncomunidad.id_usuario=id_usuario
     ncomunidad.nombre_comunidad=nombre_comunidad
     ncomunidad.comentario=comentario
-    ncomunidad.fecha=fecha
+    ncomunidad.nombre=nombre
     db.session.commit()
     return "Datos Actualizado con exitos"
 
