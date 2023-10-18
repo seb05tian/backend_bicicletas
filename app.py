@@ -31,7 +31,7 @@ def inicio():
 @app.route('/chat', methods=['GET', 'POST'])
 def chat():
     if request.method == 'POST':
-        # Si la solicitud es un POST, significa que se está enviando un nuevo comentario
+       
         nombre_usuario = request.form.get("nombre_usuario")
         comentario = request.form.get("comentario")
 
@@ -43,7 +43,7 @@ def chat():
         db.session.add(nuevo_comentario)
         db.session.commit()
 
-    # Obtén todos los comentarios de la base de datos
+   
     comentarios = comunidad.query.all()
 
     return render_template('Chat.html', comentarios=comentarios)
